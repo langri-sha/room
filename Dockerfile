@@ -49,21 +49,27 @@ RUN \
 	curl https://toolbelt.heroku.com/apt/release.key \
 		| apt-key add - && \
 
-	# nodejs
+	# nodejs; will run `apt-get update` for us
 	curl -sL https://deb.nodesource.com/setup_5.x | bash - && \
 
 	apt-get update && apt-get install -y \
 		# Goodies
 		ack-grep \
+		gdb \
 		git \
 		golang \
 		htop \
+		iotop \
+		lsof \
 		net-tools \
+		nodejs \
 		python \
+		python3 \
 		ruby \
+		siege \
+		strace \
 		tmux \
 		vim \
-		nodejs \
 		zsh \
 
 		# Cloud
