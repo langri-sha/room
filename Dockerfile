@@ -2,6 +2,7 @@ FROM debian:jessie
 
 WORKDIR /work
 
+WORKDIR /work
 CMD ["/bin/zsh"]
 
 RUN \
