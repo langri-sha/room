@@ -1,6 +1,7 @@
 FROM debian:jessie
 
-WORKDIR /work
+ENV \
+	TERM=xterm
 
 WORKDIR /work
 CMD ["/bin/zsh"]
