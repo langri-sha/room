@@ -14,17 +14,17 @@ RUN \
 		cmake \
 		curl \
 		libpcre3-dev \
-		lsb-release \
-		wget && \
+		lsb-release && \
 
-	# RCM
+	# rcm
 	export rcm_version=1.3.0-1 && \
-	wget https://thoughtbot.github.io/rcm/debs/rcm_${rcm_version}_all.deb && \
+	curl https://thoughtbot.github.io/rcm/debs/rcm_${rcm_version}_all.deb \
+		-o /tmp/rcm.deb && \
 	rcm_sha=2e95bbc23da4a0b995ec4757e0920197f4c92357214a65fedaf24274cda6806d \
-	sha=$(sha256sum rcm_${rcm_version}_all.deb | cut -f1 -d' ') \
-		[ "$sha" = "$rcm_sha" ] &&\
-	dpkg -i rcm_${rcm_version}_all.deb && \
-	rm rcm_${rcm_version}_all.deb && \
+	sha=$(sha256sum /tmp/rcm.deb | cut -f1 -d' ') \
+		[ "$sha" = "$rcm_sha" ] && \
+	dpkg -i /tmp/rcm.deb && \
+	rm /tmp/rcm.deb && \
 
 	# wercker
 	curl https://s3.amazonaws.com/downloads.wercker.com/cli/stable/linux_amd64/wercker \
@@ -75,6 +75,7 @@ RUN \
 		strace \
 		tmux \
 		vim \
+		wget \
 		zsh \
 
 		# Cloud
