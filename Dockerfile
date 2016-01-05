@@ -67,7 +67,9 @@ RUN \
 		net-tools \
 		nodejs \
 		python \
+		python-pip \
 		python3 \
+		python3-pip \
 		ruby \
 		siege \
 		strace \
