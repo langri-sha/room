@@ -57,6 +57,7 @@ RUN \
 	apt-get update && apt-get install -y \
 		# Goodies
 		ack-grep \
+		dnsutils \
 		gdb \
 		git \
 		golang \
