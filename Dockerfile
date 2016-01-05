@@ -1,6 +1,7 @@
 FROM debian:jessie
 
 ENV \
+	RCRC=/usr/local/lib/rcrc \
 	TERM=xterm
 
 WORKDIR /work
@@ -82,3 +83,17 @@ RUN \
 		docker-engine \
 		google-cloud-sdk \
 		heroku-toolbelt
+
+COPY rcrc /usr/local/lib/rcrc
+
+RUN \
+	# dotfiles
+	git clone --depth 1 \
+		https://github.com/thoughtbot/dotfiles.git \
+		/usr/local/lib/thoughtbot-dotfiles && \
+	git clone --depth 1 \
+		https://github.com/langri-sha/dotfiles.git \
+		/usr/local/lib/langri-sha-dotfiles && \
+
+	# root user
+	chsh -s /bin/zsh root
