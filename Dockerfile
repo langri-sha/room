@@ -99,4 +99,5 @@ RUN \
 		/usr/local/lib/langri-sha-dotfiles && \
 
 	# root user
-	chsh -s /bin/zsh root
+	chsh -s /bin/zsh root && \
+	USER=root rcup
