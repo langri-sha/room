@@ -82,7 +82,10 @@ RUN \
 		# Cloud
 		docker-engine \
 		google-cloud-sdk \
-		heroku-toolbelt
+		heroku-toolbelt && \
+
+	# docker-compose
+	pip install docker-compose
 
 COPY rcrc /usr/local/lib/rcrc
 
