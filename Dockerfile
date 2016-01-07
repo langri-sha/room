@@ -14,7 +14,9 @@ RUN \
 		cmake \
 		curl \
 		libpcre3-dev \
-		lsb-release && \
+		lsb-release \
+		python-setuptools \
+		python3-setuptools && \
 
 	# rcm
 	export rcm_version=1.3.0-1 && \
