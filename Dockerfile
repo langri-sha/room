@@ -68,9 +68,7 @@ RUN \
 		net-tools \
 		nodejs \
 		python \
-		python-pip \
 		python3 \
-		python3-pip \
 		ruby \
 		siege \
 		strace \
@@ -83,6 +81,10 @@ RUN \
 		docker-engine \
 		google-cloud-sdk \
 		heroku-toolbelt && \
+
+	# pip
+	easy_install pip && \
+	easy_install3 pip && \
 
 	# docker-compose
 	pip install docker-compose
