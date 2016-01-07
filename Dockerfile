@@ -4,7 +4,6 @@ ENV \
 	RCRC=/usr/local/lib/rcrc \
 	TERM=xterm
 
-WORKDIR /work
 CMD ["/bin/zsh"]
 
 RUN \
