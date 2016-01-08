@@ -1,5 +1,4 @@
 DOTFILES_DIRS="/usr/local/lib/thoughtbot-dotfiles /usr/local/lib/langri-sha-dotfiles"
 EXCLUDES="README.md LICENSE"
 HOSTNAME="room"
-SYMLINK_DIRS="oh-my-zsh"
-TAGS="zsh"
+TAGS="tmux vim zsh"
