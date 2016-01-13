@@ -7,16 +7,34 @@ ENV \
 CMD ["/bin/zsh"]
 
 RUN \
+	neovim_tag=0.1.1 && \
+
 	# Pre-requisites.
 	apt-get update && apt-get install -y \
 		apt-transport-https \
+		autoconf \
+		automake \
 		build-essential \
 		cmake \
+		cmake \
 		curl \
+		g++ \
+		git \
 		libpcre3-dev \
+		libtool \
+		libtool-bin \
 		lsb-release \
+		pkg-config \
+		pkg-config \
 		python-setuptools \
-		python3-setuptools && \
+		python3-setuptools \
+		unzip && \
+
+	# neovim
+	git clone --depth 1 --branch v${neovim_tag} \
+		https://github.com/neovim/neovim.git \
+		/usr/local/lib/neovim && \
+	(cd /usr/local/lib/neovim; make; make install) && \
 
 	# rcm
 	export rcm_version=1.3.0-1 && \
@@ -61,7 +79,6 @@ RUN \
 		ack-grep \
 		dnsutils \
 		gdb \
-		git \
 		golang \
 		htop \
 		iotop \
