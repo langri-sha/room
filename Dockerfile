@@ -89,6 +89,7 @@ RUN \
 		python3 \
 		ruby \
 		siege \
+		socat \
 		strace \
 		tmux \
 		vim \
