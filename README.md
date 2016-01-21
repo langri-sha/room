@@ -14,7 +14,7 @@ curl -L https://git.io/vuEqk -o /usr/local/bin/room
 chmod +x /usr/local/bin/room
 ```
 
-Use `sudo` in case you encounter permission errors.
+Run `sudo -i` first on permission denied errors.
 
 ## Usage
 
