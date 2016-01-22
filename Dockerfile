@@ -83,6 +83,7 @@ RUN \
 		htop \
 		iotop \
 		lsof \
+		mc \
 		net-tools \
 		nodejs \
 		python \
