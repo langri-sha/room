@@ -2,7 +2,7 @@ FROM debian:jessie
 
 ENV \
 	RCRC=/usr/local/lib/rcrc \
-	TERM=xterm
+	TERM=xterm-256color
 
 CMD ["/bin/zsh"]
 
