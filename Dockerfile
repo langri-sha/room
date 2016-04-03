@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM langrisha/room:bikeshed
 
 ENV \
 	RCRC=/usr/local/lib/rcrc \
@@ -11,21 +11,6 @@ RUN \
 
 	# Pre-requisites.
 	apt-get update && apt-get install -y \
-		apt-transport-https \
-		autoconf \
-		automake \
-		build-essential \
-		cmake \
-		cmake \
-		curl \
-		g++ \
-		git \
-		libpcre3-dev \
-		libtool \
-		libtool-bin \
-		lsb-release \
-		pkg-config \
-		pkg-config \
 		python-setuptools \
 		python3-setuptools \
 		unzip && \
