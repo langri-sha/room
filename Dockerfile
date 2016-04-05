@@ -9,12 +9,6 @@ CMD ["/bin/zsh"]
 RUN \
 	neovim_tag=0.1.1 && \
 
-	# Pre-requisites.
-	apt-get update && apt-get install -y \
-		python-setuptools \
-		python3-setuptools \
-		unzip && \
-
 	# neovim
 	git clone --depth 1 --branch v${neovim_tag} \
 		https://github.com/neovim/neovim.git \
@@ -64,16 +58,11 @@ RUN \
 		ack-grep \
 		dnsutils \
 		gdb \
-		golang \
 		htop \
 		iotop \
 		lsof \
 		mc \
 		net-tools \
-		nodejs \
-		python \
-		python3 \
-		ruby \
 		siege \
 		socat \
 		strace \
@@ -86,10 +75,6 @@ RUN \
 		docker-engine \
 		google-cloud-sdk \
 		heroku-toolbelt && \
-
-	# pip
-	easy_install pip && \
-	easy_install3 pip && \
 
 	# docker-compose
 	pip install docker-compose

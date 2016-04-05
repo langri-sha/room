@@ -1,0 +1,18 @@
+FROM langrisha/room:bikeshed
+
+RUN \
+	# nodejs; will run `apt-get update` for us
+	curl -sL https://deb.nodesource.com/setup_5.x | bash - \
+
+	&& apt-get install -y --no-install-recommends \
+		nodejs \
+		python \
+		python3 \
+		python-setuptools \
+		python3-setuptools \
+		ruby \
+		golang \
+	&& rm -rf /var/lib/apt/lists/*
+
+	&& easy_install pip \
+	&& easy_install3 pip
