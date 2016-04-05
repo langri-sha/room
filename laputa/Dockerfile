@@ -28,7 +28,7 @@ RUN \
 	&& curl https://toolbelt.heroku.com/apt/release.key \
 		| apt-key add - \
 
-	&& apt-get install -y --no-install-recommends \
+	&& apt-get update && apt-get install -y --no-install-recommends \
 		docker-engine \
 		google-cloud-sdk \
 		heroku-toolbelt \

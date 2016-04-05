@@ -1,6 +1,6 @@
 FROM buildpack-deps:jessie
 
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 		apt-transport-https \
 		build-essential \
 		cmake \

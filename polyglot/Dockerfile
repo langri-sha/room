@@ -4,7 +4,7 @@ RUN \
 	# nodejs; will run `apt-get update` for us
 	curl -sL https://deb.nodesource.com/setup_5.x | bash - \
 
-	&& apt-get install -y --no-install-recommends \
+	&& apt-get update && apt-get install -y --no-install-recommends \
 		nodejs \
 		python \
 		python3 \
