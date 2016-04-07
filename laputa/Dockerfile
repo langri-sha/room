@@ -32,6 +32,6 @@ RUN \
 		docker-engine \
 		google-cloud-sdk \
 		heroku-toolbelt \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
 
 	&& heroku-toolbelt

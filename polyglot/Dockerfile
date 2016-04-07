@@ -12,7 +12,7 @@ RUN \
 		python3-setuptools \
 		ruby \
 		golang \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
 
 	&& easy_install pip \
 	&& easy_install3 pip
