@@ -8,10 +8,10 @@ RUN \
 		| tee /etc/apt/sources.list.d/docker.list \
 
 	# docker-compose
-	&& pip install docker-compose
+	&& pip install docker-compose \
 
 	# wercker
-	curl https://s3.amazonaws.com/downloads.wercker.com/cli/stable/linux_amd64/wercker \
+	&& curl https://s3.amazonaws.com/downloads.wercker.com/cli/stable/linux_amd64/wercker \
 		-o /usr/local/bin/wercker \
 	&& chmod +x /usr/local/bin/wercker \
 
