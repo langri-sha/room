@@ -7,6 +7,8 @@ RUN \
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		nodejs \
 		python \
+		python-dev \
+		python3-dev \
 		python3 \
 		python-setuptools \
 		python3-setuptools \
