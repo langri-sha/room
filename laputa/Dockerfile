@@ -16,7 +16,7 @@ RUN \
 	&& chmod +x /usr/local/bin/wercker \
 
 	# gcloud
-	cloud_sdk_repo=cloud-sdk-`lsb_release -c -s` \
+	&& cloud_sdk_repo="cloud-sdk-$(lsb_release -c -s)" \
 	&& echo "deb http://packages.cloud.google.com/apt $cloud_sdk_repo main" \
 		| tee /etc/apt/sources.list.d/google-cloud-sdk.list \
 	&& curl https://packages.cloud.google.com/apt/doc/apt-key.gpg \
