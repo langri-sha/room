@@ -41,7 +41,7 @@ RUN \
 		strace \
 		tmux \
 		vim \
-		zsh
+		zsh \
 	&& rm -rf /var/lib/apt/lists/*
 
 COPY rcrc /usr/local/lib/rcrc
