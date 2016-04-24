@@ -1,0 +1,22 @@
+# https://docs.travis-ci.com/user/customizing-the-build/
+
+sudo: required
+
+language: python
+services:
+  - docker
+
+before_install:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+script:
+  - docker build -t langrisha/room:bikeshed ./bikeshed
+  - docker build -t langrisha/room:polyglot ./polyglot
+  - docker build -t langrisha/room:laputa ./laputa
+  - docker build -t langrisha/room:latest .
+
+post_install:
+  - docker push langrisha/room:bikeshed
+  - docker push langrisha/room:polyglot
+  - docker push langrisha/room:laputa
+  - docker push langrisha/room:latest
