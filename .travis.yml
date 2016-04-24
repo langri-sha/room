@@ -2,11 +2,12 @@
 
 sudo: required
 
-language: python
+install: true
 services:
   - docker
 
-before_install:
+
+before_script:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 script:
