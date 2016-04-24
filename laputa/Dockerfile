@@ -35,4 +35,4 @@ RUN \
 	&& rm -rf /var/lib/apt/lists/* \
 
 	# Finish installing heroku-toolbelt.
-	&& heroku
+	&& heroku --version
