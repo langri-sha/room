@@ -57,5 +57,5 @@ RUN \
 
 	# root user
 	&& chsh -s /bin/zsh root \
-	&& USER=root rcup \
-	TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins $HOME/.tmux/plugins/tpm/bin/install_plugins
+	&& USER=root rcup TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/install_plugins \
+		$HOME/.tmux/plugins/tpm/bin/install_plugins
