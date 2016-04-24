@@ -26,7 +26,7 @@ RUN \
 	&& dpkg -i /tmp/rcm.deb \
 	&& rm /tmp/rcm.deb \
 
-	&& apt-get install -y --no-install-recommends \
+	&& apt-get update && apt-get install -y --no-install-recommends \
 		# Goodies
 		ack-grep \
 		dnsutils \
