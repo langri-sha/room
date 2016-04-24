@@ -15,7 +15,7 @@ script:
   - docker build -t langrisha/room:laputa ./laputa
   - docker build -t langrisha/room:latest .
 
-post_install:
+after_success:
   - docker push langrisha/room:bikeshed
   - docker push langrisha/room:polyglot
   - docker push langrisha/room:laputa
