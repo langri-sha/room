@@ -1,12 +1,17 @@
 FROM buildpack-deps:jessie
 
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
+ENV \
+	DEBIAN_FRONTEND=noninteractive
+	DEBCONF_NONINTERACTIVE_SEEN=true
+
+RUN
+	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
 	&& echo 'locales locales/default_environment_locale select en_US.UTF-8' \
 		| debconf-set-selections \
 	&& echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' \
 		| debconf-set-selections \
 
-	&& apt-get update && apt-get install -y --no-install-recommends \
+	&& apt-get update && apt-get install -y -qq --no-install-recommends \
 		apt-transport-https \
 		build-essential \
 		cmake \
