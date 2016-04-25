@@ -1,7 +1,7 @@
 FROM buildpack-deps:jessie
 
 ENV \
-	DEBIAN_FRONTEND=noninteractive
+	DEBIAN_FRONTEND=noninteractive \
 	DEBCONF_NONINTERACTIVE_SEEN=true
 
 RUN
