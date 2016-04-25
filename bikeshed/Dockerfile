@@ -4,7 +4,7 @@ ENV \
 	DEBIAN_FRONTEND=noninteractive \
 	DEBCONF_NONINTERACTIVE_SEEN=true
 
-RUN
+RUN \
 	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
 	&& echo 'locales locales/default_environment_locale select en_US.UTF-8' \
 		| debconf-set-selections \
