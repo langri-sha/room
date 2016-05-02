@@ -1,7 +1,13 @@
 FROM langrisha/room:polyglot
 RUN \
+	# letsencrypt
+	letsencrypt=/usr/local/lib/letsencrypt
+	&& mkdir -p $letsencrypt
+	&& git clone https://github.com/letsencrypt/letsencrypt $letsencrypt
+	&& $letsencrypt/letsencrypt-auto
+
 	# docker-engine
-	apt-key adv \
+	&& apt-key adv \
 		--keyserver hkp://p80.pool.sks-keyservers.net:80 \
 		--recv-keys 58118E89F3A912897C070ADBF76221572C52609D \
 	&& echo "deb https://apt.dockerproject.org/repo debian-jessie main" \
