@@ -1,10 +1,10 @@
 FROM langrisha/room:polyglot
 RUN \
 	# letsencrypt
-	letsencrypt=/usr/local/lib/letsencrypt
-	&& mkdir -p $letsencrypt
-	&& git clone https://github.com/letsencrypt/letsencrypt $letsencrypt
-	&& $letsencrypt/letsencrypt-auto
+	letsencrypt=/usr/local/lib/letsencrypt \
+	&& mkdir -p $letsencrypt \
+	&& git clone https://github.com/letsencrypt/letsencrypt $letsencrypt \
+	&& $letsencrypt/letsencrypt-auto \
 
 	# docker-engine
 	&& apt-key adv \
