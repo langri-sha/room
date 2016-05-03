@@ -4,7 +4,7 @@ RUN \
 	letsencrypt=/usr/local/lib/letsencrypt \
 	&& mkdir -p $letsencrypt \
 	&& git clone https://github.com/letsencrypt/letsencrypt $letsencrypt \
-	&& $letsencrypt/letsencrypt-auto \
+	&& ln -s $letsencrypt/letsencrypt-auto /usr/local/bin \
 
 	# docker-engine
 	&& apt-key adv \
