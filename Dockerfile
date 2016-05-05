@@ -3,7 +3,7 @@ FROM langrisha/room:laputa
 ENV \
 	RCRC=/usr/local/lib/rcrc \
 	TERM=xterm-256color \
-	XDG_CONFIG_HOME=$HOME/.config
+	XDG_CONFIG_HOME=/root/.config
 
 CMD ["/bin/zsh"]
 
@@ -57,6 +57,6 @@ RUN \
 
 	# root user
 	&& chsh -s /bin/zsh root \
-	&& USER=root rcup \
+	&& USER=root rcup -t nvim -t tmux -t zsh \
 	&& TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/install_plugins \
 		$HOME/.tmux/plugins/tpm/bin/install_plugins
