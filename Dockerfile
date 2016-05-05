@@ -8,7 +8,7 @@ ENV \
 CMD ["/bin/zsh"]
 
 RUN \
-	neovim_tag=0.1.1 \
+	neovim_tag=0.1.4 \
 
 	# neovim
 	&& git clone --depth 1 --branch v${neovim_tag} \
