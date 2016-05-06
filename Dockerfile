@@ -16,6 +16,7 @@ RUN \
 		/usr/local/lib/neovim \
 	&& (cd /usr/local/lib/neovim; make; make install) \
 	&& pip2 install neovim && pip3 install neovim \
+	&& npm install -g eslint \
 	&& nvim -c "quit" \
 
 	# rcm
