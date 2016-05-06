@@ -41,6 +41,7 @@ RUN \
 		net-tools \
 		rsync \
 		siege \
+		silversearcher-ag \
 		socat \
 		strace \
 		tmux \
