@@ -16,6 +16,7 @@ RUN \
 		/usr/local/lib/neovim \
 	&& (cd /usr/local/lib/neovim; make; make install) \
 	&& pip2 install neovim && pip3 install neovim \
+	&& nvim -c "quit" \
 
 	# rcm
 	&& export rcm_version=1.3.0-1 \
