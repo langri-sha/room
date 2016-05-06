@@ -36,6 +36,7 @@ RUN \
 		lsof \
 		mc \
 		net-tools \
+		rsync \
 		siege \
 		socat \
 		strace \
