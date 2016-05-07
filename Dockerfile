@@ -29,8 +29,9 @@ RUN \
 	&& dpkg -i /tmp/rcm.deb \
 	&& rm /tmp/rcm.deb \
 
+
+	# Goodies
 	&& apt-get update && apt-get install -y --no-install-recommends \
-		# Goodies
 		ack-grep \
 		dnsutils \
 		gdb \
@@ -47,7 +48,9 @@ RUN \
 		tmux \
 		vim \
 		zsh \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+
+	&& pip3 install urwid sen
 
 COPY rcrc /usr/local/lib/rcrc
 
