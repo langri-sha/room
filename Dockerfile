@@ -50,7 +50,8 @@ RUN \
 		zsh \
 	&& rm -rf /var/lib/apt/lists/* \
 
-	&& pip3 install urwid sen
+	&& pip3 install urwid \
+	&& pip3 install sen
 
 COPY rcrc /usr/local/lib/rcrc
 
