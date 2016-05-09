@@ -16,7 +16,13 @@ RUN \
 		/usr/local/lib/neovim \
 	&& (cd /usr/local/lib/neovim; make; make install) \
 	&& pip2 install neovim && pip3 install neovim \
-	&& npm install -g eslint \
+	&& npm install -g \
+		eslint \
+		eslint-config-airbnb \
+		eslint-loader \
+		eslint-plugin-import \
+		eslint-plugin-jsx-a11y \
+		eslint-plugin-react \
 	&& nvim -c "quit" \
 
 	# rcm
