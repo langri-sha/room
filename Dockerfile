@@ -23,7 +23,7 @@ RUN \
 		eslint-plugin-import \
 		eslint-plugin-jsx-a11y \
 		eslint-plugin-react \
-	&& nvim -c "quit" \
+	&& nvim -c "call dein#install() | quit" \
 
 	# rcm
 	&& export rcm_version=1.3.0-1 \
