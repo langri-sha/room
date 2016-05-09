@@ -23,7 +23,6 @@ RUN \
 		eslint-plugin-import \
 		eslint-plugin-jsx-a11y \
 		eslint-plugin-react \
-	&& nvim -c "call dein#install() | quit" \
 
 	# rcm
 	&& export rcm_version=1.3.0-1 \
@@ -74,4 +73,5 @@ RUN \
 	&& chsh -s /bin/zsh root \
 	&& USER=root rcup -t nvim -t tmux -t zsh \
 	&& TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/install_plugins \
-		$HOME/.tmux/plugins/tpm/bin/install_plugins
+		$HOME/.tmux/plugins/tpm/bin/install_plugins \
+	&& nvim -c "call dein#install() | quit"
