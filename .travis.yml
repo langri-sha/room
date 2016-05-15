@@ -13,11 +13,13 @@ before_script:
 script:
   - docker build -t langrisha/room:bikeshed ./bikeshed
   - docker build -t langrisha/room:polyglot ./polyglot
+  - docker build -t langrisha/room:decapitated ./decapitated
   - docker build -t langrisha/room:laputa ./laputa
   - docker build -t langrisha/room:latest .
 
 after_success:
   - docker push langrisha/room:bikeshed
   - docker push langrisha/room:polyglot
+  - docker push langrisha/room:decapitated
   - docker push langrisha/room:laputa
   - docker push langrisha/room:latest
