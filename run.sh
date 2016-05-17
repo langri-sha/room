@@ -18,6 +18,6 @@ else
 fi
 
 # Setup volume mounts.
-VOLUMES="-v $(pwd):$(pwd) -v $HOME:$HOME"
+VOLUMES="-v $(pwd):$(pwd)"
 
 exec docker run --rm -ti $DOCKER_ADDR $VOLUMES -w $(pwd) langrisha/room $@
