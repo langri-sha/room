@@ -39,6 +39,7 @@ RUN \
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		ack-grep \
 		dnsutils \
+		emacs \
 		gdb \
 		htop \
 		iotop \
@@ -71,7 +72,7 @@ RUN \
 
 	# root user
 	&& chsh -s /bin/zsh root \
-	&& USER=root rcup -t nvim -t tmux -t zsh \
+	&& USER=root rcup -t emacs -t nvim -t tmux -t zsh \
 	&& TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/install_plugins \
 		$HOME/.tmux/plugins/tpm/bin/install_plugins \
 	&& nvim -c "call dein#install() | quit"
