@@ -1,4 +1,5 @@
 #!/bin/bash
+# See: https://github.com/mark-adams/docker-chromium-xvfb
 
 _kill_procs() {
     kill -TERM $chromium
@@ -6,13 +7,11 @@ _kill_procs() {
     kill -TERM $xvfb
 }
 
-# Setup a trap to catch SIGTERM and relay it to child processes
+# Setup termination traps and relay the signal to the child processes.
 trap _kill_procs SIGTERM
 
-XVFB_WHD=${XVFB_WHD:-1280x720x16}
-
 # Start Xvfb
-Xvfb :99 -ac -screen 0 $XVFB_WHD -nolisten tcp &
+Xvfb :99 $XVFB_ARGS &
 xvfb=$!
 
 export DISPLAY=:99
