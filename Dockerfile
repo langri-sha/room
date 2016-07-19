@@ -17,6 +17,8 @@ RUN \
 	&& (cd /usr/local/lib/neovim; make; make install) \
 	&& pip2 install neovim && pip3 install neovim \
 	&& npm install -g \
+		commitizen \
+		cz-conventional-changelog \
 		eslint \
 		eslint-config-airbnb \
 		eslint-loader \
