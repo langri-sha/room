@@ -25,6 +25,7 @@ RUN \
 		eslint-plugin-import \
 		eslint-plugin-jsx-a11y \
 		eslint-plugin-react \
+		standard \
 
 	# rcm
 	&& export rcm_version=1.3.0-1 \
