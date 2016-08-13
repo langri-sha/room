@@ -33,6 +33,9 @@ RUN \
 		| tee /etc/apt/sources.list.d/heroku.list \
 	&& curl https://toolbelt.heroku.com/apt/release.key \
 		| apt-key add - \
+		
+	# travis-ci
+	&& gem install travis \
 
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		docker-engine \
