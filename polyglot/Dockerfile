@@ -13,6 +13,7 @@ RUN \
 		python-setuptools \
 		python3-setuptools \
 		ruby \
+		ruby-dev \
 		golang \
 	&& rm -rf /var/lib/apt/lists/* \
 
