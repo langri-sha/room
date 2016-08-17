@@ -37,7 +37,6 @@ RUN \
 	&& dpkg -i /tmp/rcm.deb \
 	&& rm /tmp/rcm.deb \
 
-
 	# Goodies
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		ack-grep \
@@ -46,6 +45,7 @@ RUN \
 		gdb \
 		htop \
 		iotop \
+		less \ 
 		lsof \
 		mc \
 		net-tools \
