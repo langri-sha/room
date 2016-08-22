@@ -2,7 +2,7 @@ FROM langrisha/room:bikeshed
 
 RUN \
 	# nodejs; will run `apt-get update` for us
-	curl -sL https://deb.nodesource.com/setup_5.x | bash - \
+	curl -sL https://deb.nodesource.com/setup_6.x | bash - \
 
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		nodejs \
