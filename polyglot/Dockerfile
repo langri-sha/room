@@ -4,7 +4,7 @@ RUN \
 	# nodejs; will run `apt-get update` for us
 	curl -sL https://deb.nodesource.com/setup_6.x | bash - \
 
-	&& apt-get update && apt-get install -y --no-install-recommends \
+	&& apt-get install -y --no-install-recommends \
 		nodejs \
 		python \
 		python-dev \
