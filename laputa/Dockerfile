@@ -1,5 +1,13 @@
 FROM langrisha/room:polyglot
 RUN \
+	# keybase
+	keybase=keybase_amd64.deb && \
+	apt-get update && \
+	curl -O https://prerelease.keybase.io/$keybase && \
+	dpkg -i $keybase && \
+	apt-get install -f && \
+	rm $keybase && \
+
 	# letsencrypt
 	letsencrypt=/usr/local/lib/letsencrypt \
 	&& mkdir -p $letsencrypt \
@@ -33,7 +41,7 @@ RUN \
 		| tee /etc/apt/sources.list.d/heroku.list \
 	&& curl https://toolbelt.heroku.com/apt/release.key \
 		| apt-key add - \
-		
+
 	# travis-ci
 	&& gem install travis \
 
