@@ -3,10 +3,7 @@ RUN \
 	# keybase
 	keybase=keybase_amd64.deb && \
 	apt-get update && \
-	curl -O https://prerelease.keybase.io/$keybase && \
-	dpkg -i $keybase && \
-	apt-get install -f && \
-	rm $keybase && \
+	curl -o /var/cache/apt/archives/$keybase https://prerelease.keybase.io/$keybase && \
 
 	# letsencrypt
 	letsencrypt=/usr/local/lib/letsencrypt \
@@ -45,11 +42,13 @@ RUN \
 	# travis-ci
 	&& gem install travis \
 
-	&& apt-get update && apt-get install -y --no-install-recommends \
+	&& apt-get update && apt-get install -fy --no-install-recommends \
 		docker-engine \
 		google-cloud-sdk \
 		heroku-toolbelt \
+		keybase \
 	&& rm -rf /var/lib/apt/lists/* \
+	&& rm /var/cache/apt/archives/$keybase \
 
 	# Finish installing heroku-toolbelt.
 	&& heroku --version
