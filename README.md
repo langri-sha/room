@@ -6,15 +6,12 @@ operate with.
 ## Installation
 
 Install
-[`room/run.sh`](https://raw.githubusercontent.com/langri-sha/room/master/run.sh)
+[`room/room.sh`](https://raw.githubusercontent.com/langri-sha/room/master/room.sh)
 in your host environment via `curl`:
 
 ```
-curl -L https://git.io/vuEqk -o /usr/local/bin/room
-chmod +x /usr/local/bin/room
+curl -sL https://git.io/v69Xg | sh -
 ```
-
-Run `sudo -i` first on permission denied errors.
 
 ## Usage
 
