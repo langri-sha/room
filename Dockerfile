@@ -47,6 +47,7 @@ RUN \
 		iotop \
 		less \ 
 		lsof \
+		man-db \
 		mc \
 		net-tools \
 		rsync \
