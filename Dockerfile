@@ -26,6 +26,7 @@ RUN \
 		eslint-plugin-import \
 		eslint-plugin-jsx-a11y \
 		eslint-plugin-react \
+		git-recent \
 		standard \
 
 	# rcm
