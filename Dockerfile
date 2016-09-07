@@ -19,6 +19,7 @@ RUN \
 	&& npm install -g \
 		commitizen \
 		cz-conventional-changelog \
+		diff-so-fancy \
 		eslint \
 		eslint-config-airbnb \
 		eslint-loader \
@@ -78,4 +79,5 @@ RUN \
 	&& USER=root rcup -t emacs -t nvim -t tmux -t zsh \
 	&& TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/install_plugins \
 		$HOME/.tmux/plugins/tpm/bin/install_plugins \
-	&& nvim -c "call dein#install() | quit"
+	&& nvim -c "call dein#install() | quit" \
+	&& git config --global core.pager "diff-so-fancy | less tabs=4 -RFX"
