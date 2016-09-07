@@ -1,5 +1,7 @@
 # Room
 
+[![Build Status][travis_badge]][travis]
+
 This is a Debian container packed with much bitwise surgical kapow for you to
 operate with.
 
@@ -34,3 +36,6 @@ $ room npm install
 If you sift through the list of goodies and feel like it's missing some
 :lollipop: pizzazz, please throw me a PR. I :heart: adding shiny new tools to
 the collection!
+
+[travis_badge]: https://travis-ci.org/langri-sha/room.svg?branch=master
+[travis]: https://travis-ci.org/langri-sha/room
