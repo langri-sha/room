@@ -82,4 +82,4 @@ RUN \
 	&& TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/install_plugins \
 		$HOME/.tmux/plugins/tpm/bin/install_plugins \
 	&& nvim -c "call dein#install() | quit" \
-	&& git config --global core.pager "diff-so-fancy | less tabs=4 -RFX"
+	&& git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
