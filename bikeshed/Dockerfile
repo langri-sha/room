@@ -2,7 +2,8 @@ FROM buildpack-deps:jessie
 
 ENV \
 	DEBIAN_FRONTEND=noninteractive \
-	DEBCONF_NONINTERACTIVE_SEEN=true
+	DEBCONF_NONINTERACTIVE_SEEN=true \
+	LANG=en_US.UTF-8
 
 RUN \
 	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
@@ -10,6 +11,7 @@ RUN \
 		| debconf-set-selections \
 	&& echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' \
 		| debconf-set-selections \
+	&& dpkg-reconfigure locales \
 
 	&& apt-get update && apt-get install -y -qq --no-install-recommends \
 		apt-transport-https \
