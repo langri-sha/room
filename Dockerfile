@@ -47,8 +47,9 @@ RUN \
 		gdb \
 		htop \
 		iotop \
-		less \ 
+		less \
 		lsof \
+		lynx \
 		man-db \
 		mc \
 		net-tools \
