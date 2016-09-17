@@ -47,6 +47,7 @@ RUN \
 
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		docker-engine \
+		ftp \
 		google-cloud-sdk \
 		heroku-toolbelt \
 	&& rm -rf /var/lib/apt/lists/* \
