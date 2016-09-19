@@ -45,6 +45,23 @@ RUN \
 	# travis-ci
 	&& gem install travis \
 
+	# terraform
+	&& curl -O https://keybase.io/hashicorp/key.asc \
+	&& gpg --with-fingerprint key.asc | grep "91A6 E7F8 5D05 C656 30BE  F189 5185 2D87 348F FC4C" \
+	&& gpg --import key.asc \
+	&& terraform_version=0.7.3 \
+	&& terraform_prefix=terraform_${terraform_version} \
+	&& terraform_url=https://releases.hashicorp.com/terraform/${terraform_version}/${terraform_prefix} \
+	&& curl -O ${terraform_url}_linux_amd64.zip \
+	&& curl -O ${terraform_url}_SHA256SUMS \
+	&& curl -O ${terraform_url}_SHA256SUMS.sig \
+	&& gpg --verify ${terraform_prefix}_SHA256SUMS.sig ${terraform_prefix}_SHA256SUMS \
+	&& shasum -a 256 -c ${terraform_prefix}_SHA256SUMS \
+		| grep "linux_amd64.zip: OK" \
+	&& unzip ${terraform_prefix}_linux_amd64.zip -d .\
+	&& cp terraform /usr/local/bin \
+	&& chmod +x $_\
+
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		docker-engine \
 		ftp \
