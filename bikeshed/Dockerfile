@@ -5,7 +5,14 @@ ENV \
 	DEBCONF_NONINTERACTIVE_SEEN=true
 
 RUN \
-	apt-get update && apt-get install -y -qq --no-install-recommends \
+	echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
+	&& echo 'locales locales/default_environment_locale select en_US.UTF-8' \
+		| debconf-set-selections \
+	&& echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' \
+		| debconf-set-selections \
+	&& dpkg-reconfigure locales \
+
+	&& apt-get update && apt-get install -y -qq --no-install-recommends \
 		apt-transport-https \
 		build-essential \
 		cmake \
@@ -17,16 +24,11 @@ RUN \
 		fuse \
 	&& rm -rf /var/lib/apt/lists/* \
 
-	&& echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
-	&& echo 'locales locales/default_environment_locale select en_US.UTF-8' \
-		| debconf-set-selections \
-	&& echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' \
-		| debconf-set-selections \
 	&& locale-gen en_US.UTF-8 \
-	&& /usr/sbin/update-locale update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 \
-	&& dpkg-reconfigure locales
+	&& dpkg-reconfigure locales \
+	&& /usr/sbin/update-locale update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
-ENV
+ENV \
 	LANG='en_US.UTF-8' \
 	LANGUAGE='en_US:en' \
-	LC_ALL='en_US.UTF-8'
+	LC_ALL='en_US.UTF-8' \
