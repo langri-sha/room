@@ -10,7 +10,6 @@ RUN \
 		| debconf-set-selections \
 	&& echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' \
 		| debconf-set-selections \
-	&& dpkg-reconfigure locales \
 
 	&& apt-get update && apt-get install -y -qq --no-install-recommends \
 		apt-transport-https \
