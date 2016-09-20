@@ -60,7 +60,7 @@ RUN \
 		| grep "linux_amd64.zip: OK" \
 	&& unzip ${terraform_prefix}_linux_amd64.zip -d .\
 	&& cp terraform /usr/local/bin \
-	&& chmod +x $_\
+	&& chmod +x /usr/local/bin \
 
 	&& apt-get update && apt-get install -y --no-install-recommends \
 		docker-engine \
