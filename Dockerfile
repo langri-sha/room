@@ -45,6 +45,7 @@ RUN \
 		dnsutils \
 		emacs \
 		gdb \
+		gettext-base \
 		htop \
 		iotop \
 		less \
