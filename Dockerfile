@@ -47,6 +47,7 @@ RUN \
 		gdb \
 		gettext-base \
 		htop \
+		install-info \
 		iotop \
 		less \
 		lsof \
