@@ -1,10 +1,10 @@
 #!/bin/sh
 {
-	curl -L https://raw.githubusercontent.com/langri-sha/room/master/run.sh -o /usr/local/bin/room && \
+	curl -L https://raw.githubusercontent.com/langri-sha/room/master/room.sh -o /usr/local/bin/room && \
 	chmod +x /usr/local/bin/room && \
-	printf "\nSuccessfullya installed 'room' command.\n\n"
+	printf "\nSuccessfully installed 'room' command.\n\n"
 } || {
-	sudo curl -L https://raw.githubusercontent.com/langri-sha/room/master/run.sh -o /usr/local/bin/room && \
+	sudo curl -L https://raw.githubusercontent.com/langri-sha/room/master/room.sh -o /usr/local/bin/room && \
 	sudo chmod +x /usr/local/bin/room && \
 	printf "\nSuccessfully installed 'room' command.\n"
 } || {
