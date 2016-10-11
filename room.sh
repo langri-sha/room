@@ -23,4 +23,9 @@ PERMISSIONS="-e USER=$USER -u $(id -u $USER):$(id -g $USER)"
 # Volumize current directory.
 VOLUMES="-v $(pwd):/mnt/$(pwd)"
 
+# Volumize X11 socket if present.
+if [ -f /tmp/.X11.sock ]; then
+  VOLUMES="$VOLUMES -v /tmp/.X11.sock:/tmp/.X11.sock"
+fi
+
 exec docker run --rm -ti $DOCKER_ADDR $PERMISSIONS $VOLUMES -w /mnt/$(pwd) room $@
