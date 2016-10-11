@@ -20,7 +20,7 @@ fi
 # Configure container permissions.
 PERMISSIONS="-e USER=$USER -u $(id -u $USER):$(id -g $USER)"
 
-# Setup volume mounts.
-VOLUMES="-v $(pwd):$(pwd)"
+# Volumize current directory.
+VOLUMES="-v $(pwd):/mnt/$(pwd)"
 
 exec docker run --rm -ti $DOCKER_ADDR $PERMISSIONS $VOLUMES -w /mnt/$(pwd) room $@
