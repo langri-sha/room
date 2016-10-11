@@ -3,7 +3,8 @@ FROM langrisha/room:laputa
 ENV \
 	RCRC=/usr/local/lib/rcrc \
 	TERM=xterm-256color \
-	XDG_CONFIG_HOME=/root/.config
+	XDG_CONFIG_HOME=/root/.config \
+	HOME=/root
 
 CMD ["/bin/zsh"]
 
@@ -94,4 +95,9 @@ RUN \
 	&& git config --global alias.lg3 '!git lg3-specific --all' \
 	&& git config --global alias.lg1-specific "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'" \
 	&& git config --global alias.lg2-specific "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'" \
-	&& git config --global alias.lg3-specific "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'"
+	&& git config --global alias.lg3-specific "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'" \
+
+	# Configure home access control.
+	&& chmod o+rwx /root \
+	&& chmod -R o+rw /root \
+	&& chmod o-w -R /root/.oh-my-zsh /root/.zsh

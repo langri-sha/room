@@ -17,7 +17,10 @@ else
     DOCKER_ADDR="-e DOCKER_HOST -e DOCKER_TLS_VERIFY -e DOCKER_CERT_PATH"
 fi
 
+# Configure container permissions.
+PERMISSIONS="-e USER=$USER -u $(id -u $USER):$(id -g $USER)"
+
 # Setup volume mounts.
 VOLUMES="-v $(pwd):$(pwd)"
 
-exec docker run --rm -ti $DOCKER_ADDR $VOLUMES -w $(pwd) langrisha/room $@
+exec docker run --rm -ti $DOCKER_ADDR $PERMISSIONS $VOLUMES -w /mnt/$(pwd) room $@
