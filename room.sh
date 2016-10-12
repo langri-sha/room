@@ -28,4 +28,4 @@ if [ -f /tmp/.X11.sock ]; then
   VOLUMES="$VOLUMES -v /tmp/.X11.sock:/tmp/.X11.sock"
 fi
 
-exec docker run --rm -ti $DOCKER_ADDR $PERMISSIONS $VOLUMES -w /mnt/$(pwd) room $@
+exec docker run --rm -ti $DOCKER_ADDR $PERMISSIONS $VOLUMES -w /mnt/$(pwd) langrisha/room $@
