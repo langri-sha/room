@@ -18,7 +18,7 @@ else
 fi
 
 # Configure container permissions.
-PERMISSIONS="-e USER=$USER -u $(id -u $USER):$(id -g $USER)"
+PERMISSIONS="-e USER=$USER -e GROUP=$(getent group `id -g $USER` | cut -d: -f1) -u $(id -u $USER):$(id -g $USER)"
 
 # Volumize current directory.
 VOLUMES="-v $(pwd):/mnt/$(pwd)"
