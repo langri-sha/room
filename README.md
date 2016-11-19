@@ -5,6 +5,8 @@
 This is a Debian container packed with much bitwise surgical kapow for you to
 operate with.
 
+Currently works with `docker-machine` only.
+
 ## Installation
 
 Install
