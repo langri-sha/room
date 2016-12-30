@@ -23,6 +23,15 @@ RUN \
 		fuse \
 	&& rm -rf /var/lib/apt/lists/* \
 
+	&& echo 'APT::Default-Release "stable";' \
+		> /etc/apt/apt.conf.d/99defaultreleases \
+
+	&& echo '\
+	deb http://deb.debian.org/debian testing main \n\
+	deb http://deb.debian.org/debian testing-updates main \n\
+	deb http://security.debian.org testing/updates main \n'\
+	>> /etc/apt/sources.list.d/testing.list \
+
 	&& locale-gen en_US.UTF-8 \
 	&& dpkg-reconfigure locales \
 	&& /usr/sbin/update-locale update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
@@ -30,4 +39,4 @@ RUN \
 ENV \
 	LANG='en_US.UTF-8' \
 	LANGUAGE='en_US:en' \
-	LC_ALL='en_US.UTF-8' \
+	LC_ALL='en_US.UTF-8'
