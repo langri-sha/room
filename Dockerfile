@@ -9,15 +9,7 @@ ENV \
 CMD ["/bin/zsh"]
 
 RUN \
-	neovim_tag=0.1.4 \
-
-	# neovim
-	&& git clone --depth 1 --branch v${neovim_tag} \
-		https://github.com/neovim/neovim.git \
-		/usr/local/lib/neovim \
-	&& (cd /usr/local/lib/neovim; make; make install) \
-	&& pip2 install neovim && pip3 install neovim \
-	&& npm install -g \
+	npm install -g \
 		commitizen \
 		cz-conventional-changelog \
 		diff-so-fancy \
@@ -55,7 +47,10 @@ RUN \
 		lynx \
 		man-db \
 		mc \
+		neovim/testing \
 		net-tools \
+		python-neovim/testing \
+		python3-neovim/testing \
 		rsync \
 		siege \
 		silversearcher-ag \
@@ -67,8 +62,9 @@ RUN \
 		zsh \
 	&& rm -rf /var/lib/apt/lists/* \
 
-	&& pip3 install urwid \
-	&& pip3 install sen
+	&& pip3 install \
+		sen \
+		urwid
 
 COPY rcrc /usr/local/lib/rcrc
 
