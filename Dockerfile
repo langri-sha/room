@@ -49,8 +49,6 @@ RUN \
 		mc \
 		neovim/testing \
 		net-tools \
-		python-neovim/testing \
-		python3-neovim/testing \
 		rsync \
 		siege \
 		silversearcher-ag \
@@ -62,7 +60,10 @@ RUN \
 		zsh \
 	&& rm -rf /var/lib/apt/lists/* \
 
+	&& pip2 install \
+		neovim \
 	&& pip3 install \
+		neovim \
 		sen \
 		urwid
 
