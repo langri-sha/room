@@ -30,7 +30,7 @@ RUN \
 	deb http://deb.debian.org/debian testing main \n\
 	deb http://deb.debian.org/debian testing-updates main \n\
 	deb http://security.debian.org testing/updates main \n'\
-	>> /etc/apt/sources.list.d/testing.list \
+	>> /etc/apt/sources.list.d/100testing.list \
 
 	&& locale-gen en_US.UTF-8 \
 	&& dpkg-reconfigure locales \
