@@ -13,6 +13,9 @@ RUN \
 
 	&& sed -i -- 's/http:\/\/deb/http:\/\/httpredir/g' /etc/apt/sources.list \
 
+	&& echo 'APT::Default-Release "jessie";' \
+		> /etc/apt/apt.conf.d/99preferjessie \
+
 	&& echo '\
 	Package: *\n\
 	Pin: release a=testing,a=testing/main \n\
