@@ -11,6 +11,8 @@ RUN \
 	&& echo 'locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8' \
 		| debconf-set-selections \
 
+	&& sed -i -- 's/http:\/\/deb/http:\/\/httpredir/g' /etc/apt/sources.list \
+
 	&& echo '\
 	Package: *\n\
 	Pin: release a=testing,a=testing/main \n\
