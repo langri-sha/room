@@ -62,10 +62,10 @@ RUN \
 
 	&& pip2 install \
 		neovim \
+	&& pip3 install	urwid \
 	&& pip3 install \
 		neovim \
-		sen \
-		urwid
+		sen
 
 COPY rcrc /usr/local/lib/rcrc
 
