@@ -16,22 +16,23 @@ RUN \
 
 	# Use geographical mirrors.
 	&& sed -i -- 's/http:\/\/deb/http:\/\/httpredir/g' /etc/apt/sources.list \
+	&& echo /etc/apt/sources.list \
 
 	# Configure 'jessie' as default release.
 	&& echo 'APT::Default-Release "jessie";' \
-		> /etc/apt/apt.conf.d/99preferjessie \
+		| tee /etc/apt/apt.conf.d/99preferjessie \
 
 	# Pin packages from testing source to a lower priority.
 	&& echo '\
 	Package: *\n\
 	Pin: release a=testing,a=testing/main \n\
 	Pin-Priority: 100' \
-	>> /etc/apt/preferences.d/testing \
+		| tee /etc/apt/preferences.d/testing \
 
 	# Add source for testing packages.
 	&& echo '\
 	deb http://httpredir.debian.org/debian testing main\n' \
-	>> /etc/apt/sources.list.d/testing.list \
+		| tee /etc/apt/sources.list.d/testing.list \
 
 	# Add base packages.
 	&& apt-get update && apt-get install -y apt-utils \
