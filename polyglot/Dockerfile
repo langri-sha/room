@@ -18,4 +18,6 @@ RUN \
 	&& rm -rf /var/lib/apt/lists/* \
 
 	&& easy_install pip \
-	&& easy_install3 pip
+	&& easy_install3 pip \
+
+	&& curl https://sh.rustup.rs -sSf | sh -s -- -y

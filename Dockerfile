@@ -20,6 +20,7 @@ RUN \
 		eslint-plugin-jsx-a11y \
 		eslint-plugin-react \
 		git-recent \
+		lighthouse \
 		standard \
 
 	# rcm
