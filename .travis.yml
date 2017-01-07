@@ -16,8 +16,12 @@ script:
     docker build -t langrisha/room:latest .
 
 after_success:
-  - docker push langrisha/room:bikeshed
-  - docker push langrisha/room:polyglot
-  - docker push langrisha/room:decapitated
-  - docker push langrisha/room:laputa
-  - docker push langrisha/room:latest
+- |
+    if ([ "$TRAVIS_BRANCH" == "master" ] || [ ! -z "$TRAVIS_TAG" ]) &&
+        [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+        docker push langrisha/room:bikeshed
+        docker push langrisha/room:polyglot
+        docker push langrisha/room:decapitated
+        docker push langrisha/room:laputa
+        docker push langrisha/room:latest
+    fi
