@@ -21,3 +21,5 @@ RUN \
 	&& easy_install3 pip \
 
 	&& curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+ENV PATH=$PATH:/root/.cargo/bin
