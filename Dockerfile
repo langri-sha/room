@@ -68,6 +68,17 @@ RUN \
 		neovim \
 		sen
 
+	# SciPy stack
+	&& pip3 install \
+		numpy \
+		scipy \
+		matplotlib \
+		ipython \
+		jupyter \
+		pandas \
+		sympy \
+		nose
+
 COPY rcrc /usr/local/lib/rcrc
 
 RUN \
