@@ -67,7 +67,7 @@ RUN \
 	&& pip3 install	urwid \
 	&& pip3 install \
 		neovim \
-		sen
+		sen \
 
 	# SciPy stack
 	&& pip3 install \
