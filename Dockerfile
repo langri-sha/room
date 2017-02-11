@@ -58,6 +58,7 @@ RUN \
 		sudo \
 		tmux \
 		vim \
+		weechat \
 		zsh \
 	&& rm -rf /var/lib/apt/lists/* \
 
